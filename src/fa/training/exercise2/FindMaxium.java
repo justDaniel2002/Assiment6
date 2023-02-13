@@ -5,9 +5,9 @@ public class FindMaxium {
 	public static void main(String args[]) {
 		int[] arr = {2, 5, 6, 8, 42, 12, 33};
 		
-		System.out.print("số lớn nhất trong dãy số sau là: ");
+		System.out.print("2 số lớn nhất trong dãy số sau là: ");
 		printArray(arr);
-		System.out.println(maximum(arr));
+		System.out.println(maximum(arr)+" "+secondMax(arr));
 	}
 	
 	public static int maximum(int[] list) {
@@ -16,6 +16,15 @@ public class FindMaxium {
 			if(i > max) max = i;
 		}
 		return max;
+	}
+	
+	public static int secondMax(int[] list) {
+		int secondMax=-1;
+		int max=maximum(list);
+		for(int i : list) {
+			if(i < max&&i>secondMax) secondMax = i;
+		}
+		return secondMax;
 	}
 	
 	static void printArray(int arr[]) {
